@@ -1,0 +1,82 @@
+body {
+    background-image: url('../images/sneakers-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    margin: 2vh auto;
+    max-width: 800px;
+}
+
+.chat-header {
+    padding: 15px;
+    background-color: rgba(248, 249, 250, 0.9);
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.8);
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 15px;
+    max-width: 70%;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.message-user {
+    background-color: rgba(0, 123, 255, 0.9);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.message-bot {
+    background-color: rgba(233, 236, 239, 0.9);
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-input {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid #dee2e6;
+    border-radius: 0 0 10px 10px;
+}
+
+.user-status {
+    font-size: 0.8em;
+    color: #28a745;
+}
+
+.user-status.offline {
+    color: #dc3545;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
+    .message {
+        max-width: 85%;
+    }
+} 
