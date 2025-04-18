@@ -6,10 +6,13 @@
             </div>
             
             <div class="chat-messages">
-                <?php if (isset($messages) && is_array($messages)): ?>
-                    <?php foreach ($messages as $message): ?>
-                        <div class="message <?php echo $message['type'] === 'user' ? 'message-user' : 'message-bot'; ?>">
-                            <div><?php echo htmlspecialchars($message['content']); ?></div>
+                <?php if (isset($responses) && is_array($responses)): ?>
+                    <?php foreach ($responses as $response): 
+                        var_dump($responses);
+                        ?>
+                        
+                        <div class="message <?php echo $response['type'] === 'user' ? 'message-user' : 'message-bot'; ?>">
+                            <div><?php echo htmlspecialchars($response['content']); ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
