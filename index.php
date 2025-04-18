@@ -22,19 +22,14 @@ try {
 
   switch($page){
     case "":
-        case "chatbot":
-            if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
-                $chatbotController->read();
-            }
-            break;
+        $chatbotController->read();
+    break;
     case "message":
-      if (isset($_SESSION['admin']) && $_SESSION['admin'] === true) {
         $messageController->message();
-      }
-      break;
+    break;
     default:
       echo "404 Page non trouvée";
-      break;
+    break;
   }
 
 } catch (Exception $e) { 
