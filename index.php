@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__ . "/Controllers/messageController.php";
 require_once __DIR__ . "/Controllers/chatbotController.php";
-
+require_once __DIR__ . "/Views/chat.php";
 
 define("URL", str_replace("index.php", "",(isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"]
 ));
