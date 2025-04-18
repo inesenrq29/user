@@ -1,5 +1,5 @@
-<body class="bg-light">
-    <div class="container mt-4">
+<body class="bg-light" style="background-image: url('<?= URL ?>public/assets/images/sneakers-bg.png')">
+        <div class="container mt-4">
         <div class="chat-container">
             <div class="chat-header">
                 <h5 class="mb-0">Chat Sneak-Me</h5>
