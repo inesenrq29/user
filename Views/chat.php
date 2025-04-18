@@ -20,7 +20,7 @@
             </div>
             
             <div class="chat-input">
-                <form method="POST" action="chat.php" class="d-flex">
+                <form method="POST" action="" class="d-flex">
                     <input type="text" name="message" class="form-control me-2" placeholder="Posez votre question...">
                     <button type="submit" class="btn btn-primary">Envoyer</button>
                 </form>
