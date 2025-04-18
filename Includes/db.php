@@ -7,6 +7,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
 
+
 function getConnection()
 {
     /* Utilisation de PDO dans un try and catch afin de se connecter à la bdd */

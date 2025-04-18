@@ -7,38 +7,59 @@ require_once __DIR__ . '/../Models/userModel.php';
 class MessageController {
 
     public function message() {
-        require_once __DIR__ . "/../Includes/head.php";
+        // Initialisation de la session
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
-        $message = strtolower(trim(($_POST['message-user'])));
-        $responses = [];
+        // Initialisation des variables de session
+        $_SESSION['chat'] = $_SESSION['chat'] ?? [];
+
+        $message = strtolower(trim($_POST['message'] ?? ''));
         $userModel = new UserModel();
 
         try {
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($message)) {
                 $keywords = $userModel->getAllKeywords();
+                
                 $found = [];
-
                 foreach ($keywords as $keyword) {
-                    if (stripos($message, $keyword['keyword_name']) !== false) {
+                    if (stripos($message, strtolower($keyword['mot_cle'])) !== false) {
                         $found[] = $keyword['id'];
                     }
                 }
 
+                $_SESSION['chat'][] = [
+                    'type' => 'user',
+                    'content' => $message
+                ];
+
                 if ($found) {
-                    $responses = $userModel->getAllResponseFromKeyword($found);
+                    $responseTexts = $userModel->getAllResponseFromKeyword($found);
+                    
+                    foreach ($responseTexts as $text) {
+                        $_SESSION['chat'][] = [
+                            'type' => 'bot',
+                            'content' => $text
+                        ];
+                    }
                 } else {
-                    echo("Aucun résultat");
+                    $_SESSION['chat'][] = [
+                        'type' => 'bot',
+                        'content' => "Désolé, je n'ai pas compris votre demande."
+                    ];
                 }
-            } 
+            }
+
+            $responses = $_SESSION['chat'];
         } catch (Throwable $e) {
-            echo "Une erreur est survenue : " . $e->getMessage();
+            $_SESSION['chat'][] = [
+                'type' => 'bot',
+                'content' => "Une erreur est survenue : " . $e->getMessage()
+            ];
+            $responses = $_SESSION['chat'];
         }
 
-        include __DIR__ . '/../Views/user.php';
-    } 
-        
-
-       
+        include_once __DIR__ . '/../Views/chat.php';
     }
-
-?>
+}
