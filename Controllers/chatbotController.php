@@ -7,9 +7,9 @@ class ChatBotController {
 
     public function read() {
         require_once __DIR__ . "/../Includes/head.php";
-        echo('test chat');
-
-        include __DIR__ . '/../Views/user.php';
+        
+        // Inclusion de la vue
+        include __DIR__ . '/../Views/chat.php';
     }
 
 }
