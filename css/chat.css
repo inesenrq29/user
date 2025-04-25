@@ -70,3 +70,15 @@ body {
         max-width: 85%;
     }
 } 
+
+.open {
+    display: flex;
+}
+
+.btn-chat {
+    border-radius: 100px;
+}
+
+.d-none {
+    display: none;
+}

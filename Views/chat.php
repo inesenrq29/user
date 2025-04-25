@@ -1,6 +1,7 @@
 <body class="bg-light" style="background-image: url('<?= URL ?>public/assets/images/sneakers-bg.png')">
     <div class="container mt-4">
-        <div class="chat-container">
+    <button id="toggleChatBtn" class="btn btn-primary mb-3">Ouvrir le chat</button>
+        <div id="chatContainer" class="chat-container d-none">
             <div class="chat-header">
                 <h5 class="mb-0">Chat Sneak-Me</h5>
             </div>
