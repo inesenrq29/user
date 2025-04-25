@@ -9,7 +9,7 @@
                 <?php if (!empty($responses)): ?>
                     <?php foreach ($responses as $response): ?>
                         <div class="message <?php echo $response['type'] === 'user' ? 'message-user' : 'message-bot'; ?>">
-                            <div><?php echo htmlspecialchars($response['content']); ?></div>
+                            <div><?php echo $response['content']; ?></div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -29,5 +29,7 @@
             </div>
         </div>
     </div>
+
+    <script src="<?= URL ?>public/assets/js/chatbot.js"></script>
 </body>
 </html>

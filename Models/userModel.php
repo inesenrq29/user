@@ -18,8 +18,8 @@ class UserModel {
         $db = getConnection();
         $placeholders = str_repeat('?,', count($keywordIds) - 1) . '?';
         $sql = "SELECT DISTINCT r.response_name as reponse 
-                FROM response r
-                INNER JOIN keyword_response kr ON r.id = kr.response_id
+        FROM response r
+        INNER JOIN keyword_response kr ON r.id = kr.response_id
                 WHERE kr.keyword_id IN ($placeholders)";
         $stmt = $db->prepare($sql);
         $stmt->execute($keywordIds);
