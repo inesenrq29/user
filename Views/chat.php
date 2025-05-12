@@ -1,9 +1,9 @@
 <body class="bg-light" style="background-image: url('<?= URL ?>public/assets/images/sneakers-bg.png')">
-    <div class="container mt-4">
-    <button id="toggleChatBtn" class="btn btn-primary mb-3">Ouvrir le chat</button>
+    <div class="container mt-4"> 
         <div id="chatContainer" class="chat-container d-none">
             <div class="chat-header">
                 <h5 class="mb-0">Chat Sneak-Me</h5>
+                <button id="closeChat" class="close-chat"><i class="fa-solid fa-xmark" style="align-content: center" ></i></button>
             </div>
 
             <div class="chat-messages">
@@ -29,6 +29,8 @@
                 </form>
             </div>
         </div>
+        <div class="open-btn"><img id="toggleChatBtn" src='<?= URL ?>public/assets/images/logo-blue.png' style="cursor: pointer; width: 100px; height: auto;"> 
+        </div> 
     </div>
 
     <script src="<?= URL ?>public/assets/js/chatbot.js"></script>

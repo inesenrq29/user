@@ -23,6 +23,8 @@ body {
     background-color: rgba(248, 249, 250, 0.9);
     border-bottom: 1px solid #dee2e6;
     border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .chat-messages {
@@ -68,6 +70,16 @@ body {
 
 .user-status.offline {
     color: #dc3545;
+}
+
+.open-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.close-chat {
+    border-style: none;
+    background-color: rgba(248, 249, 250, 0.9);;
 }
 
 /* Animation de chargement */
