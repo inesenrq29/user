@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () { //attend que la page
             if (isHidden) { //si c'est "caché"
                 chat.classList.remove('d-none'); //on retire la propriété pour afficher le chat
                 localStorage.setItem('chatOpen', 'true'); //on stocke dans localStorage pour indiquer que le chat est ouvert
+                button.classList.add('d-none');
             } 
         });
 });
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () { //attend que la page
 document.addEventListener("DOMContentLoaded", function () { //attend que la page soit entièrement chargée 
     const chat = document.getElementById('chatContainer'); //classe contenant le chat
     const button = document.getElementById('closeChat'); //bouton "ouvrir le chat"
+    const btn = document.getElementById('toggleChatBtn');
 
         button.addEventListener('click', function () { //ajout d'un écouteur d'évènement "au clic" et on appelle la fonction ci-dessous
             const isHidden = chat.classList.contains('d-none'); //classe qui contient "d-none"
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () { //attend que la page
             if (!isHidden) { //si c'est "caché"
                 chat.classList.add('d-none');
                 localStorage.setItem('chatOpen', 'false');
+                btn.classList.remove('d-none');
             } 
         });
 });
