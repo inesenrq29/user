@@ -116,6 +116,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+
 /* Tablette paysage (≤1280px) */
 @media (max-width: 80em) {
     .chat-container {
@@ -149,6 +150,8 @@ body {
     }
 }
 
+
+
 /* Keyframes */
 @keyframes wiggle {
     0%, 7% {
@@ -173,3 +176,6 @@ body {
         transform: rotateZ(0);
     }
 }
+
+
+
