@@ -23,6 +23,12 @@ body {
     overflow: hidden;
 }
 
+/* Par défaut (desktop large) */
+.chat-container {
+    width: 16em;
+    height: 24em;
+}
+
 .chat-header {
     padding: 0.938em;
     background-color: rgba(248, 249, 250, 0.9);
@@ -110,6 +116,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+
 /* Desktop large (≥1280px) */
 @media (min-width: 80em) {
     .chat-container {
@@ -119,38 +126,47 @@ body {
     }
 }
 
+
 /* Tablette paysage (≤1280px) */
 @media (max-width: 80em) {
     .chat-container {
+
         width: 20em;
         height: 28em;
         right: 1.5em;
+
     }
 }
 
 /* Tablette portrait et petits laptops (≤1024px) */
 @media (max-width: 64em) {
     .chat-container {
+
         width: 18em;
         height: 26em;
         right: 1em;
+
     }
 }
 
 /* Mobile (≤768px) */
 @media (max-width: 48em) {
     .chat-container {
+
         width: 16em;
         height: 24em;
         right: 1em;
         top: 50%;
         transform: translateY(-50%);
         border-radius: 0.625em;
+
     }
     .message {
         max-width: 85%;
     }
 }
+
+
 
 /* Keyframes */
 @keyframes wiggle {
@@ -176,3 +192,6 @@ body {
         transform: rotateZ(0);
     }
 }
+
+
+
