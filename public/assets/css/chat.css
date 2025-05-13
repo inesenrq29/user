@@ -9,8 +9,7 @@ body {
 
 .chat-container {
     position: fixed;
-    bottom: 80px;        /* laisse de la place pour le bouton */
-    right: 20px;
+    bottom: 1em;
     width: 350px;
     height: 500px;
     display: flex;
@@ -87,6 +86,14 @@ body {
 }
 
 .typing-indicator {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+.typing-indicator {
     display: inline-block;
     width: 24px;
     height: 24px;
@@ -114,28 +121,28 @@ body {
         max-width: 85%;
     }
 }
-  
-  /* Keyframes */
-  @keyframes wiggle {
+
+/* Keyframes */
+@keyframes wiggle {
     0%, 7% {
-      transform: rotateZ(0);
+        transform: rotateZ(0);
     }
     15% {
-      transform: rotateZ(-15deg);
+        transform: rotateZ(-15deg);
     }
     20% {
-      transform: rotateZ(10deg);
+        transform: rotateZ(10deg);
     }
     25% {
-      transform: rotateZ(-10deg);
+        transform: rotateZ(-10deg);
     }
     30% {
-      transform: rotateZ(6deg);
+        transform: rotateZ(6deg);
     }
     35% {
-      transform: rotateZ(-4deg);
+        transform: rotateZ(-4deg);
     }
     40%, 100% {
-      transform: rotateZ(0);
+        transform: rotateZ(0);
     }
-  }
+}
