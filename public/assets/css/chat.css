@@ -23,6 +23,12 @@ body {
     overflow: hidden;
 }
 
+/* Par défaut (desktop large) */
+.chat-container {
+    width: 16em;
+    height: 24em;
+}
+
 .chat-header {
     padding: 0.938em;
     background-color: rgba(248, 249, 250, 0.9);
@@ -110,12 +116,32 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* Tablette paysage (≤1280px) */
+@media (max-width: 80em) {
+    .chat-container {
+        width: 18em;
+        height: 22em;
+    }
+}
+
+/* Tablette portrait et petits laptops (≤1024px) */
+@media (max-width: 64em) {
+    .chat-container {
+        width: 95vw;
+        max-width: 20em;
+        right: 2vw;
+        height: 20em;
+    }
+}
+
+/* Mobile (≤768px) */
 @media (max-width: 48em) {
     .chat-container {
-        width: 100%;
+        width: 100vw;
         right: 0;
         bottom: 3.75em;
         max-height: 100vh;
+        height: 100vh;
         border-radius: 0;
     }
     .message {
