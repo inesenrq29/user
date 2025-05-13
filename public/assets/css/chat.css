@@ -110,18 +110,6 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-@media (max-width: 48em) {
-    .chat-container {
-        width: 100%;
-        right: 0;
-        bottom: 3.75em;
-        max-height: 100vh;
-        border-radius: 0;
-    }
-    .message {
-        max-width: 85%;
-    }
-}
 
 /* Keyframes */
 @keyframes wiggle {
@@ -145,5 +133,46 @@ body {
     }
     40%, 100% {
         transform: rotateZ(0);
+    }
+}
+
+
+
+/* Desktop large (≥1280px) */
+.chat-container {
+    width: 16em;
+    height: 26em;
+}
+
+/*  ≤1280px */
+@media (max-width: 80em) {
+    .chat-container {
+        width: 18em;
+        height: 24em;
+    }
+}
+
+/*  ≤1024px */
+@media (max-width: 64em) {
+    .chat-container {
+        width: 95vw;
+        max-width: 20em;
+        right: 2vw;
+        height: 22em;
+    }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 48em) {
+    .chat-container {
+        width: 100vw;
+        right: 0;
+        bottom: 0em;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .message {
+        max-width: 85%;
     }
 }
