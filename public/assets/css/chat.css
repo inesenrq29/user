@@ -9,13 +9,14 @@ body {
 
 .chat-container {
     position: fixed;
-    bottom: 1em;
-    width: 350px;
-    height: 500px;
+    bottom: 5em;        /* laisse de la place pour le bouton */
+    right: 1.25em;
+    width: 22em;
+    height: 31.25em;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 0.625em;
+    box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
     background-color: rgba(255, 255, 255, 0.95);
     margin: 0;           /* plus de centrage auto */
     z-index: 1000;
@@ -23,10 +24,10 @@ body {
 }
 
 .chat-header {
-    padding: 15px;
+    padding: 0.938em;
     background-color: rgba(248, 249, 250, 0.9);
-    border-bottom: 1px solid #dee2e6;
-    border-radius: 10px 10px 0 0;
+    border-bottom: 0.063em solid #dee2e6;
+    border-radius: 0.625em 0.625em 0 0;
     display: flex;
     justify-content: space-between;
 }
@@ -34,43 +35,43 @@ body {
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 20px;
+    padding: 1.25em;
     background-color: rgba(248, 249, 250, 0.8);
 }
 
 .message {
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 15px;
+    margin-bottom: 0.938em;
+    padding: 0.75em;
+    border-radius: 0.938em;
     max-width: 70%;
     position: relative;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 0.063em 0.125em rgba(0,0,0,0.1);
 }
 
 .message-user {
     background-color: rgba(0, 123, 255, 0.9);
     color: white;
     margin-left: auto;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 0.313em;
 }
 
 .message-bot {
     background-color: rgba(233, 236, 239, 0.9);
     margin-right: auto;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 0.313em;
 }
 
 .chat-input {
-    padding: 15px;
+    padding: 0.938em;
     background-color: rgba(255, 255, 255, 0.9);
-    border-top: 1px solid #dee2e6;
-    border-radius: 0 0 10px 10px;
+    border-top: 0.063em solid #dee2e6;
+    border-radius: 0 0 0.625em 0.625em;
 }
 
 .open-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 1.25em;
+    right: 1.25em;
     z-index: 1001;
     animation: wiggle 2s linear infinite;
     border-radius: 0 0 0.2em 0.2em;
@@ -95,10 +96,10 @@ body {
 
 .typing-indicator {
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    border: 3px solid #ccc;
-    border-top: 3px solid #333;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.188em solid #ccc;
+    border-top: 0.188em solid #333;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto;
@@ -109,11 +110,11 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .chat-container {
         width: 100%;
         right: 0;
-        bottom: 60px;
+        bottom: 3.75em;
         max-height: 100vh;
         border-radius: 0;
     }

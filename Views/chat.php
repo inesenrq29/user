@@ -107,13 +107,15 @@
     Le style définit la taille et le curseur
 -->
 <div class="open-btn">
+
     <img
             id="toggleChatBtn"
             src="<?= URL ?>public/assets/images/logo-blue.png"
             alt="Ouvrir le chat"
             style="cursor: pointer; width: 10em; height: auto;"
     >
-</div>
+
+
 
 <!-- 
     Inclusion du fichier JavaScript qui gère le chat
