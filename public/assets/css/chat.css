@@ -25,8 +25,8 @@ body {
 
 /* Par défaut (desktop large) */
 .chat-container {
-    width: 16em;
-    height: 24em;
+    width: 18em;
+    height: 25em;
 }
 
 .chat-header {
@@ -120,8 +120,8 @@ body {
 /* Tablette paysage (≤1280px) */
 @media (max-width: 80em) {
     .chat-container {
-        width: 18em;
-        height: 22em;
+        width: 20em;
+        height: 25em;
     }
 }
 
