@@ -38,7 +38,7 @@
 
 <!-- Bouton d’ouverture -->
 <div class="open-btn">
-    <img id="toggleChatBtn" src="<?= URL ?>public/assets/images/logo-blue.png" alt="Ouvrir le chat" style="cursor: pointer; width: 130px; height: auto;">
+    <img id="toggleChatBtn" src="<?= URL ?>public/assets/images/logo-blue.png" alt="Ouvrir le chat" style="cursor: pointer; width: 8.125em; height: auto;">
 </div>
 
 <script src="<?= URL ?>public/assets/js/chatbot.js"></script>
