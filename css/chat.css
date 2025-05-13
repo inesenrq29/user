@@ -10,57 +10,57 @@ body {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 0.625em;
+    box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
     background-color: rgba(255, 255, 255, 0.95);
     margin: 2vh auto;
-    max-width: 800px;
+    max-width: 50em;
 }
 
 .chat-header {
-    padding: 15px;
+    padding: 0.938em;
     background-color: rgba(248, 249, 250, 0.9);
-    border-bottom: 1px solid #dee2e6;
-    border-radius: 10px 10px 0 0;
+    border-bottom: 0.063em solid #dee2e6;
+    border-radius: 0.625em 0.625em 0 0;
 }
 
 .chat-messages {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 20px;
+    padding: 1.25em;
     background-color: rgba(248, 249, 250, 0.8);
 }
 
 .message {
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 15px;
+    margin-bottom: 0.938em;
+    padding: 0.75em;
+    border-radius: 0.938em;
     max-width: 70%;
     position: relative;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 0.063em 0.125em rgba(0,0,0,0.1);
 }
 
 .message-user {
     background-color: rgba(0, 123, 255, 0.9);
     color: white;
     margin-left: auto;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 0.313em;
 }
 
 .message-bot {
     background-color: rgba(233, 236, 239, 0.9);
     margin-right: auto;
-    border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 0.313em;
 }
 
 .chat-input {
-    padding: 15px;
+    padding: 0.938em;
     background-color: rgba(255, 255, 255, 0.9);
-    border-top: 1px solid #dee2e6;
-    border-radius: 0 0 10px 10px;
+    border-top: 0.063em solid #dee2e6;
+    border-radius: 0 0 0.625em 0.625em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
     .chat-container {
         height: 100vh;
         border-radius: 0;
@@ -76,7 +76,7 @@ body {
 }
 
 .btn-chat {
-    border-radius: 100px;
+    border-radius: 6.25em;
 }
 
 .d-none {
