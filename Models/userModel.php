@@ -25,6 +25,14 @@ class UserModel {
         $stmt->execute($keywordIds);
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
+
+    public function getCatalog() {
+        $db = getConnection();
+        $sql = "SELECT * FROM product";
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
 ?>
 

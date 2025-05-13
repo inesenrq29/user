@@ -66,7 +66,27 @@ class MessageController {
                             'content' => $text // Le contenu de la réponse
                         ];
                     }
-                } else {
+                    if ($message === 'oui') {
+                        
+                        $catalog = $userModel->getCatalog();
+
+                        if(!empty($catalog)) {
+                            foreach($catalog as $product) {
+                                $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']}";
+                                $_SESSION['chat'][] = [
+                                    'type'    => 'bot',
+                                    'content' => $text
+                                ];
+                            } 
+                        } else {
+                                $_SESSION['chat'][] = [
+                                    'type'    => 'bot',
+                                    'content' => "Le catalogue est vide pour le moment."
+                                ];
+                            }
+                    }
+                }  
+                else {
                     // Si aucun mot-clé n'a été trouvé, envoie un message par défaut
                     $_SESSION['chat'][] = [
                         'type'    => 'bot',
