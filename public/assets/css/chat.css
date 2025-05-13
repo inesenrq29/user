@@ -9,8 +9,9 @@ body {
 
 .chat-container {
     position: fixed;
-    bottom: 5em;        /* laisse de la place pour le bouton */
+    top: 50%;
     right: 1.25em;
+    transform: translateY(-50%);
     width: 22em;
     height: 31.25em;
     display: flex;
@@ -18,7 +19,6 @@ body {
     border-radius: 0.625em;
     box-shadow: 0 0 0.625em rgba(0,0,0,0.1);
     background-color: rgba(255, 255, 255, 0.95);
-    margin: 0;           /* plus de centrage auto */
     z-index: 1000;
     overflow: hidden;
 }
@@ -110,13 +110,42 @@ body {
     100% { transform: rotate(360deg); }
 }
 
+/* Desktop large (≥1280px) */
+@media (min-width: 80em) {
+    .chat-container {
+        width: 22em;
+        height: 31.25em;
+        right: 2em;
+    }
+}
+
+/* Tablette paysage (≤1280px) */
+@media (max-width: 80em) {
+    .chat-container {
+        width: 20em;
+        height: 28em;
+        right: 1.5em;
+    }
+}
+
+/* Tablette portrait et petits laptops (≤1024px) */
+@media (max-width: 64em) {
+    .chat-container {
+        width: 18em;
+        height: 26em;
+        right: 1em;
+    }
+}
+
+/* Mobile (≤768px) */
 @media (max-width: 48em) {
     .chat-container {
-        width: 100%;
-        right: 0;
-        bottom: 3.75em;
-        max-height: 100vh;
-        border-radius: 0;
+        width: 16em;
+        height: 24em;
+        right: 1em;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 0.625em;
     }
     .message {
         max-width: 85%;
