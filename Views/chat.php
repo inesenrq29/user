@@ -5,10 +5,7 @@
     - Un conteneur pour le chat
     - Un bouton pour ouvrir le chat
 -->
-<script>
-    const BASE_URL = "<?= URL ?>";
-</script> 
-<script src="<?= URL ?>public/assets/js/chatbot.js"></script>
+
 <!-- 
     Le body a une classe 'bg-light' pour un fond clair
     et une image de fond de sneakers en arrière-plan
@@ -121,6 +118,9 @@
     Inclusion du fichier JavaScript qui gère le chat
     Ce script contient toute la logique d'interaction
 -->
+<script>
+    const BASE_URL = "<?= URL ?>";
+</script> 
 <script src="<?= URL ?>public/assets/js/chatbot.js"></script>
 </body>
 </html>

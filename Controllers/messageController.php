@@ -65,26 +65,32 @@ class MessageController {
                             'type'    => 'bot', // Type 'bot' pour les réponses du robot
                             'content' => $text // Le contenu de la réponse
                         ];
-                    }
-                    if ($message === 'oui') {
-                        
-                        $catalog = $userModel->getCatalog();
 
-                        if(!empty($catalog)) {
-                            foreach($catalog as $product) {
-                                $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']}";
-                                $_SESSION['chat'][] = [
-                                    'type'    => 'bot',
-                                    'content' => $text
-                                ];
-                            } 
-                        } else {
-                                $_SESSION['chat'][] = [
-                                    'type'    => 'bot',
-                                    'content' => "Le catalogue est vide pour le moment."
-                                ];
-                            }
+                        //si la réponse contient cette phrase:
+                        if ($text === "Souhaitez-vous voir notre catalogue ?") {
+                            $_SESSION['catalog'] = true; //on initialise une session catalog
+                        }
                     }
+                        if (isset($_SESSION['catalog']) && $_SESSION['catalog'] && $message === 'oui') { //si la session catalog
+                            unset($_SESSION['catalog']); //supprime la session 
+
+                            $catalog = $userModel->getCatalog(); //fonction qui affiche tous les produits
+
+                            if(!empty($catalog)) { //si catalogue n'est pas vide
+                                foreach($catalog as $product) { // pour chaque produit on affiche:
+                                    $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']}"; //le nom, le prix et description
+                                    $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
+                                        'type'    => 'bot',
+                                        'content' => $text
+                                    ];
+                                } 
+                            } else { //sinon on affiche un message par défaut
+                                    $_SESSION['chat'][] = [
+                                        'type'    => 'bot',
+                                        'content' => "Le catalogue est vide pour le moment."
+                                    ];
+                                }
+                        }
                 }  
                 else {
                     // Si aucun mot-clé n'a été trouvé, envoie un message par défaut
