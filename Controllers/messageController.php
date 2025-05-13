@@ -70,8 +70,21 @@ class MessageController {
                         if ($text === "Souhaitez-vous voir notre catalogue ?") {
                             $_SESSION['catalog'] = true; //on initialise une session catalog
                         }
+
+                        if ($text === "Vous souhaitez contacter le service après vente ?") {
+                            $_SESSION['sav'] = true; //on initialise une session catalog
+                        }
                     }
-                        if (isset($_SESSION['catalog']) && $_SESSION['catalog'] && $message === 'oui') { //si la session catalog
+                    if (isset($_SESSION['sav']) && $_SESSION['sav'] && $message === 'oui') { //si la session catalog
+                            unset($_SESSION['sav']); //supprime la session 
+                            
+                            $text = "Pour joindre notre service après vente, vous pouvez contacter le 0865342154 munit de votre numéro de commande"; //le nom, le prix et description
+                            $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
+                                'type'    => 'bot',
+                                'content' => $text
+                            ];
+                        }
+                         elseif (isset($_SESSION['catalog']) && $_SESSION['catalog'] && $message === 'oui') { //si la session catalog
                             unset($_SESSION['catalog']); //supprime la session 
 
                             $catalog = $userModel->getCatalog(); //fonction qui affiche tous les produits
@@ -91,6 +104,7 @@ class MessageController {
                                     ];
                                 }
                         }
+                        
                 }  
                 else {
                     // Si aucun mot-clé n'a été trouvé, envoie un message par défaut

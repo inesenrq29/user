@@ -28,10 +28,10 @@ class UserModel {
 
     public function getCatalog() {
         $db = getConnection();
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT title, description, image, price FROM product";
         $stmt = $db->prepare($sql);
         $stmt->execute();
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
