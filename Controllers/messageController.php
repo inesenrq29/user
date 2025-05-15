@@ -95,8 +95,14 @@ class MessageController {
                                     $newUrl = str_replace("user", "sneak-me/Public/uploads/", URL); //la nouvelle url
                                     $imageUrl = $newUrl . $imageName; //l'url de l'image
 
-                                    $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']} \nImage : "; //le nom, le prix et description
-                                    $text .= "<img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px'>"; //l'ajout de l'image (balise)
+                                    $text = "
+                                    <div class='product'>
+                                        <p><strong>Produit :</strong> {$product['title']}</p>
+                                        <p><strong>Description :</strong> {$product['description']}</p>
+                                        <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
+                                        <p><strong>Prix : {$product['price']} €</strong></p>
+                                    </div>
+                                    ";
                                     $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
                                         'type'    => 'bot',
                                         'content' => $text
