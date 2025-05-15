@@ -91,7 +91,13 @@ class MessageController {
 
                             if(!empty($catalog)) { //si catalogue n'est pas vide
                                 foreach($catalog as $product) { // pour chaque produit on affiche:
-                                    $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']}"; //le nom, le prix et description
+                                    $imageName = rawurlencode($product['image']);
+                                    $url = "http://localhost/sneak-me/user";
+                                    $newUrl = str_replace("user", "sneak-me/Public/uploads/", $url);
+                                    $imageUrl = $newUrl . $imageName;
+
+                                    $text = "Produit : {$product['title']}\nPrix : {$product['price']} €\nDescription : {$product['description']} \nImage : "; //le nom, le prix et description
+                                    $text .= "<img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px'>";
                                     $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
                                         'type'    => 'bot',
                                         'content' => $text
