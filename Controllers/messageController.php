@@ -96,16 +96,19 @@ class MessageController {
                                     $imageUrl = $newUrl . $imageName; //l'url de l'image
 
                                     $text = "
-                                        <div class='product'>
-                                            <p><strong>Produit :</strong> {$product['title']}</p>
-                                            <p><strong>Description :</strong> {$product['description']}</p>
-                                            <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
-                                            <p><strong>Prix : {$product['price']} €</strong></p>
-                                            <a href='sneakme-store/product.html' target='_blank' 
-                                               class='inline-block bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm'>Commander</a>
-                                        </div>
-                                    ";
+                                    <div class='product'>
+                                        <p><strong>Produit :</strong> {$product['title']}</p>
+                                        <p><strong>Description :</strong> {$product['description']}</p>
+                                        <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
+                                        <p><strong>Prix : {$product['price']} €</strong></p>
 
+                                        <a href='sneakme-store/product.html' target='_blank' 
+                                            class='inline-block text-white px-3 py-1 rounded text-sm'
+                                            style='background-color: rgb(141, 189, 29);'>
+                                            Commander
+                                        </a>
+                                        
+                                    </div>";
                                     $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
                                         'type'    => 'bot',
                                         'content' => $text
