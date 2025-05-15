@@ -112,7 +112,7 @@
             style="cursor: pointer; width: 10em; height: auto;"
     >
 
-
+</div>
 
 <!-- 
     Inclusion du fichier JavaScript qui gère le chat
@@ -122,5 +122,6 @@
     const BASE_URL = "<?= URL ?>";
 </script> 
 <script src="<?= URL ?>public/assets/js/chatbot.js"></script>
+<script src="<?= URL ?>public/assets/js/modal.js"></script>
 </body>
 </html>

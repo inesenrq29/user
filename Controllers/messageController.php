@@ -97,18 +97,28 @@ class MessageController {
 
                                     $text = "
                                     <div class='product'>
-                                        <p><strong>Produit :</strong> {$product['title']}</p>
-                                        <p><strong>Description :</strong> {$product['description']}</p>
-                                        <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
+                                        <img src='{$imageUrl}' 
+                                             alt='{$product['title']}' 
+                                             style='height: 150px; display: block; margin: 10px 0; cursor: pointer;'
+                                             class='product-image'
+                                             data-title='{$product['title']}'
+                                             data-description='{$product['description']}'
+                                             data-price='{$product['price']}'
+                                             onclick='openProductModal(this)'>
                                         <p><strong>Prix : {$product['price']} €</strong></p>
+                                        <a href='#' class='btn' style='background-color:rgb(141, 189, 29); border: none; color: white;'>Commander</a>
+                                    </div>
 
-                                        <a href='sneakme-store/product.html' target='_blank' 
-                                            class='inline-block text-white px-3 py-1 rounded text-sm'
-                                            style='background-color: rgb(141, 189, 29);'>
-                                            Commander
-                                        </a>
-                                        
+                                    <!-- Modal -->
+                                    <div id='productModal' class='modal' style='display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4);'>
+                                        <div class='modal-content' style='background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px; border-radius: 5px;'>
+                                            <span class='close' onclick='closeProductModal()' style='color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;'>&times;</span>
+                                            <h2 id='modalTitle' style='margin-top: 0;'></h2>
+                                            <p id='modalDescription'></p>
+                                            <p><strong>Prix : </strong><span id='modalPrice'></span> €</p>
+                                        </div>
                                     </div>";
+
                                     $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
                                         'type'    => 'bot',
                                         'content' => $text
