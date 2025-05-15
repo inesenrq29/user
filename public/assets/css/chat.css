@@ -25,8 +25,8 @@ body {
 
 /* Par défaut (desktop large) */
 .chat-container {
-    width: 16em;
-    height: 24em;
+    width: 18em;
+    height: 25em;
 }
 
 .chat-header {

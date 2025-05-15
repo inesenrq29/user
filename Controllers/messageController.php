@@ -65,8 +65,60 @@ class MessageController {
                             'type'    => 'bot', // Type 'bot' pour les réponses du robot
                             'content' => $text // Le contenu de la réponse
                         ];
+
+                        //si la réponse contient cette phrase:
+                        if ($text === "Souhaitez-vous voir notre catalogue ?") {
+                            $_SESSION['catalog'] = true; //on initialise une session catalog
+                        }
+
+                        if ($text === "Vous souhaitez contacter le service après vente ?") {
+                            $_SESSION['sav'] = true; //on initialise une session catalog
+                        }
                     }
-                } else {
+                    if (isset($_SESSION['sav']) && $_SESSION['sav'] && $message === 'oui') { //si la session catalog
+                            unset($_SESSION['sav']); //supprime la session 
+                            
+                            $text = "Pour joindre notre service après vente, vous pouvez contacter le 0865342154 munit de votre numéro de commande"; //le nom, le prix et description
+                            $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
+                                'type'    => 'bot',
+                                'content' => $text
+                            ];
+                        }
+                         elseif (isset($_SESSION['catalog']) && $_SESSION['catalog'] && $message === 'oui') { //si la session catalog
+                            unset($_SESSION['catalog']); //supprime la session 
+
+                            $catalog = $userModel->getCatalog(); //fonction qui affiche tous les produits
+
+                            if(!empty($catalog)) { //si catalogue n'est pas vide
+                                foreach($catalog as $product) { // pour chaque produit on affiche:
+                                    $imageName = rawurlencode($product['image']); //le nom de l'image
+                                    $newUrl = str_replace("user", "sneak-me/Public/uploads/", URL); //la nouvelle url
+                                    $imageUrl = $newUrl . $imageName; //l'url de l'image
+
+                                    $text = "
+                                    <div class='product'>
+                                        <p><strong>Produit :</strong> {$product['title']}</p>
+                                        <p><strong>Description :</strong> {$product['description']}</p>
+                                        <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
+                                        <p><strong>Prix : {$product['price']} €</strong></p>
+                                        <a href='#' class='btn ' style='background-color:rgb(141, 189, 29); border: none; color: white;'>Commander</a>
+                                    </div>
+                                    ";
+                                    $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
+                                        'type'    => 'bot',
+                                        'content' => $text
+                                    ];
+                                } 
+                            } else { //sinon on affiche un message par défaut
+                                    $_SESSION['chat'][] = [
+                                        'type'    => 'bot',
+                                        'content' => "Le catalogue est vide pour le moment."
+                                    ];
+                                }
+                        }
+                        
+                }  
+                else {
                     // Si aucun mot-clé n'a été trouvé, envoie un message par défaut
                     $_SESSION['chat'][] = [
                         'type'    => 'bot',

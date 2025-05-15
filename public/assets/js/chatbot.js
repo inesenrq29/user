@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const d = document.createElement('div');
                         // Choisit la classe CSS selon le type de message (user ou bot)
                         d.className = 'message ' + (m.type === 'user' ? 'message-user' : 'message-bot');
-                        d.textContent = m.content;
+                        d.innerHTML = m.content;
                         //affichage du message
                         messagesDiv.appendChild(d); 
                     });
