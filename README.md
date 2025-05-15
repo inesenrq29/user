@@ -20,7 +20,8 @@ Cette application web est construite avec PHP en utilisant une architecture MVC 
 ```
 
 ## Capture d'écran du chat
-![public/assets/images/demo-user.png](http://localhost/sneak-me/user/public/assets/images/demo-user.png)
+![image](https://github.com/user-attachments/assets/9414edd5-ff16-4e43-b2ad-5079eab9991e)
+
 
 ## Fonctionnalités
 ### Chat Intégré
