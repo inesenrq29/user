@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SneakMe - Nouvelle Collection 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html, body { height: 100%; }
+        .header-gradient {
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6, #1e3a8a);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+<!-- Header -->
+<header class="header-gradient text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+        <img class="h-20 w-20" src="../public/assets/img/logo-white.png" alt="Entreprise sneakme" />
+        <a href="#" class="text-3xl font-extrabold tracking-tight">SneakMe</a>
+        <nav class="hidden md:flex space-x-8 font-medium">
+            <a href="#" class="hover:underline text-xl">Nouveautés</a>
+            <a href="#" class="hover:underline text-xl">Homme</a>
+            <a href="#" class="hover:underline text-xl">Femme</a>
+            <a href="#" class="hover:underline text-xl">Promotions</a>
+            <a href="#" class="hover:underline text-xl">Contact</a>
+        </nav>
+    </div>
+
+</header>
+<section class=" h-[40vh] flex flex-col items-center justify-center text-center bg-blue-600 text-white" style="background-image: url('../public/assets/img/banner.jpeg');background-repeat: no-repeat;background-size: cover; background-position: center">
+    <div class="bg-black bg-opacity-50 rounded-md p-20">
+        <h1 class="text-6xl font-extrabold mb-4">Collection 2025 Disponible</h1>
+        <p class="text-xl mb-8">Des modèles inédits à ne pas manquer</p>
+        <a href="#product" class="bg-white text-blue-600 px-8 py-4 rounded-md shadow-md hover:bg-gray-100 transition text-lg font-medium animate-bounce">
+            Voir le catalogue
+        </a>
+    </div>
+</section>
+<!-- Hero Header plus grand sans parallax -->
+
+
+<!-- Fiche Produit -->
+<main id="product" class="flex-grow">
+    <section class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 text-center md:text-left">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Nike Air Max 2025</h2>
+            <p class="text-gray-600 text-xl mb-6 max-w-xl">
+                Une sneaker iconique revisitée. Conçue pour la performance, stylée pour le quotidien.
+            </p>
+            <p class="text-gray-500 my-8 text-lg">
+                Matière : <span class="text-gray-900">Cuir</span><br/>
+                Couleur : <span class="text-gray-900">blanc</span><br/>
+                Pointure : <span class="text-gray-900">du 39 au 47</span><br/>
+                Livraison : <span class="text-gray-900">3jrs</span>
+            </p>
+            <div class="flex justify-center md:justify-start gap-4">
+                <a href="/connexion" class="bg-white border border-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-100 transition font-medium">
+                    Se connecter / S'inscrire
+                </a>
+                <a href="/paiement" class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-medium">
+                    Payer maintenant - 179,99€
+                </a>
+            </div>
+        </div>
+        <div class="flex-1">
+            <img src="../public/assets/img/air-force.avif" alt="Nike Air Max 2025" class="w-full rounded-xl shadow-xl border">
+        </div>
+    </section>
+    <!-- Bannière Parallax bien visible -->
+    <section class="relative h-[50vh] flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-fixed bg-center bg-cover" style="background-image: url('../public/assets/img/parralax.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        </div>
+        <div class="relative z-10">
+            <h2 class="text-4xl font-bold mb-2">Livraison offerte pour les membres SneakMe+</h2>
+            <p class="text-lg">Rejoignez-nous et profitez d'avantages exclusifs.</p>
+        </div>
+    </section>
+
+    <!-- Promos avec carousel réel -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Promotions du moment</h2>
+        <div class="flex space-x-12 overflow-x-auto pb-4">
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+1" alt="Promo 1" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 1</h3>
+                <p class="text-gray-600 mb-2">79,99€ <span class="line-through text-red-500 ml-2">99,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <!-- Dupliquer ci-dessous -->
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+2" alt="Promo 2" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 2</h3>
+                <p class="text-gray-600 mb-2">89,99€ <span class="line-through text-red-500 ml-2">119,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <!-- Répète jusqu’à 8 ou plus -->
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+3" alt="Promo 3" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 3</h3>
+                <p class="text-gray-600 mb-2">99,99€ <span class="line-through text-red-500 ml-2">139,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+4" alt="Promo 1" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 4</h3>
+                <p class="text-gray-600 mb-2">79,99€ <span class="line-through text-red-500 ml-2">99,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <!-- Dupliquer ci-dessous -->
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+5" alt="Promo 2" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 5</h3>
+                <p class="text-gray-600 mb-2">89,99€ <span class="line-through text-red-500 ml-2">119,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <!-- Répète jusqu’à 8 ou plus -->
+            <div class="flex-none w-72 bg-white rounded-lg shadow-md p-4">
+                <img src="https://placehold.co/300x300?text=Promo+6" alt="Promo 3" class="rounded-md mb-4">
+                <h3 class="text-lg font-bold mb-2">Sneaker Promo 6</h3>
+                <p class="text-gray-600 mb-2">99,99€ <span class="line-through text-red-500 ml-2">139,99€</span></p>
+                <a href="/paiement" class="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700 transition">Acheter</a>
+            </div>
+            <!-- ... Continue jusqu'à 8+ -->
+        </div>
+    </section>
+
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-gray-100 py-6 text-center text-sm text-gray-500">
+    &copy; 2025 SneakMe. Tous droits réservés.
+</footer>
+
+</body>
+</html>
