@@ -101,6 +101,7 @@ class MessageController {
                                         <p><strong>Description :</strong> {$product['description']}</p>
                                         <img src='{$imageUrl}' alt='{$product['title']}' style='height: 150px; display: block; margin: 10px 0;'>
                                         <p><strong>Prix : {$product['price']} €</strong></p>
+                                        <a href='#' class='btn ' style='background-color:rgb(141, 189, 29); border: none; color: white;'>Commander</a>
                                     </div>
                                     ";
                                     $_SESSION['chat'][] = [ //le produit sera envoyé en réponse par le bot
