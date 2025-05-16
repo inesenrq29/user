@@ -105,7 +105,7 @@ class MessageController {
                                              data-price='{$product['price']}'
                                              onclick='openProductModal(this)'>
                                         <p><strong>Prix : {$product['price']} €</strong></p>
-                                        <a href='#' class='btn' style='background-color:rgb(141, 189, 29); border: none; color: white;'>Commander</a>
+                                        <a href='sneakme-store/product.html' target='_blank' class='btn' style='background-color:rgb(141, 189, 29); border: none; color: white;'>Commander</a>
                                     </div>
 
                                     <!-- Modal -->
