@@ -96,10 +96,9 @@ class MessageController {
                                     $imageUrl = $newUrl . $imageName; //l'url de l'image
 
                                     $text = "
-                                    <div class='product'>
+                                    <div class='product' >
                                         <img src='{$imageUrl}' 
                                              alt='{$product['title']}' 
-                                             style='height: 150px; display: block; margin: 10px 0; cursor: pointer;'
                                              class='product-image'
                                              data-title='{$product['title']}'
                                              data-description='{$product['description']}'
@@ -110,10 +109,10 @@ class MessageController {
                                     </div>
 
                                     <!-- Modal -->
-                                    <div id='productModal' class='modal' style='display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4);'>
-                                        <div class='modal-content' style='background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 500px; border-radius: 5px;'>
-                                            <span class='close' onclick='closeProductModal()' style='color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;'>&times;</span>
-                                            <h2 id='modalTitle' style='margin-top: 0;'></h2>
+                                    <div id='productModal' class='modal'>
+                                        <div class='modal-content'>
+                                            <span class='close' onclick='closeProductModal()'>&times;</span>
+                                            <h2 id='modalTitle'></h2>
                                             <p id='modalDescription'></p>
                                             <p><strong>Prix : </strong><span id='modalPrice'></span> €</p>
                                         </div>
