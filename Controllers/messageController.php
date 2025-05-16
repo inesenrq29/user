@@ -99,7 +99,6 @@ class MessageController {
                                     <div class='product' >
                                         <img src='{$imageUrl}' 
                                              alt='{$product['title']}' 
-                                             style='height: 150px; display: block; margin: 10px 0; cursor: pointer; object-fit: cover;'
                                              class='product-image'
                                              data-title='{$product['title']}'
                                              data-description='{$product['description']}'

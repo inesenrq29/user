@@ -35,6 +35,12 @@
 .product-image {
     cursor: pointer;
     transition: transform 0.2s;
+    height: 150px; 
+    width: 150px; 
+    display: block; 
+    margin: 10px 0; 
+    cursor: pointer; 
+    object-fit: cover;
 }
 
 .product-image:hover {
